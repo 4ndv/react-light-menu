@@ -40,6 +40,14 @@ class Example extends Component {
 }
 ```
 
+## Development
+
+To run examples locally, you will need to `npm link` react, otherwise everything will fail:
+
+```bash
+npm link ../node_modules/react
+```
+
 ## Thanks
 
 H.Alper Tuna - [react-metismenu](https://github.com/alpertuna/react-metismenu), where I took some things like DOM structure and theming
