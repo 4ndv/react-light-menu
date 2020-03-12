@@ -1,10 +1,10 @@
 {
-  "name": "react-router-light-menu",
+  "name": "react-light-menu",
   "version": "1.0.0",
   "description": "Modern and easy to use menu component for react-router",
   "author": "Andrey Viktorov <andv@outlook.com> (https://github.com/4ndv)",
   "license": "MIT",
-  "repository": "4ndv/react-router-light-menu",
+  "repository": "4ndv/react-light-menu",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "jsnext:main": "dist/index.es.js",

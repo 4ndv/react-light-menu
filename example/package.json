@@ -1,6 +1,6 @@
 {
-  "name": "react-router-light-menu-example",
-  "homepage": "https://4ndv.github.io/react-router-light-menu",
+  "name": "react-light-menu-example",
+  "homepage": "https://4ndv.github.io/react-light-menu",
   "version": "0.0.0",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,7 @@
     "react": "^16.8.0",
     "react-dom": "^16.8.0",
     "react-scripts": "^1.1.4",
-    "react-router-light-menu": "link:.."
+    "react-light-menu": "link:.."
   },
   "scripts": {
     "start": "react-scripts start",

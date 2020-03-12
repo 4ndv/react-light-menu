@@ -1,6 +1,6 @@
 {
-  "short_name": "react-router-light-menu",
-  "name": "react-router-light-menu",
+  "short_name": "react-light-menu",
+  "name": "react-light-menu",
   "start_url": "./index.html",
   "display": "standalone",
   "theme_color": "#000000",
