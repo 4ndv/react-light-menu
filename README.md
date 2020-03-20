@@ -40,17 +40,26 @@ class Example extends Component {
 }
 ```
 
+## TODO
+
+- Move active items info into context
+- Class names configuration
+- Tests
+- Move `react-router` part in separate library
+- Next.js router support
+
 ## Development
 
-To run examples locally, you will need to `npm link` react, otherwise everything will fail:
+To run examples locally, you will need to `npm link` react in `example` folder, otherwise everything will fail:
 
 ```bash
+cd example
 npm link ../node_modules/react
 ```
 
 ## Thanks
 
-H.Alper Tuna - [react-metismenu](https://github.com/alpertuna/react-metismenu), where I took some things like DOM structure and theming
+H.Alper Tuna - [react-metismenu](https://github.com/alpertuna/react-metismenu), where I took some things like DOM structure and default style
 
 ## License
 

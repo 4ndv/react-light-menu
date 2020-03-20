@@ -15,13 +15,12 @@ export const hashItem = (item) => {
 
 export const hashItems = (items, parentHashes = []) => {
   for (const item of items) {
-    item.hash = hashItem(item)
-
     item.parentHashes = [...parentHashes]
+    item.hash = hashItem(item)
 
     if (Array.isArray(item.items)) {
       item.items = hashItems(
-        item.items, [item.hash, ...item.parentHashes]
+        item.items, [...item.parentHashes, item.hash]
       )
     }
   }
@@ -40,7 +39,7 @@ export const mapPathsToHashes = (items) => {
     const { to } = item
     if (!to) continue
 
-    mapOfPaths[to] = [item.hash, ...item.parentHashes]
+    mapOfPaths[to] = [...item.parentHashes, item.hash]
   }
 
   return mapOfPaths
@@ -77,4 +76,12 @@ export const findActiveItems = (pathsToHashes, pathname, highlightNested) => {
   }
 
   return bestMatchHashes
+}
+
+export const isActiveItem = (activeItems, hash) => {
+  return activeItems.includes(hash)
+}
+
+export const arrayLast = (array) => {
+  return array[array.length - 1]
 }

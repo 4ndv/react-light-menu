@@ -1,3 +1,128 @@
+$font-size: 12pt;
+
+$icon-width: 3em;
+$first-level-item-height: 2.5em;
+$sub-level-item-height: 2.5em;
+
+$first-level-indent: 0em;
+$second-level-indent: 1em;
+$third-level-indent: 2em;
+
+$bg: #1e1b18;
+$bg-active: #d8315b;
+$fg: #DDD;
+
+$effect-duration: 300ms;
+
 .light-menu {
-  background: #F3F3F3;
+  background: $bg;
+  font-size: $font-size;
+  overflow: hidden;
+  position: relative;
+
+  > .light-menu-container {
+    > .light-menu-item {
+      > .light-menu-link {
+        padding-left: $first-level-indent;
+        line-height: $first-level-item-height;
+
+        .light-menu-state-icon {
+          line-height: $first-level-item-height;
+        }
+      }
+    }
+  }
+
+  &::after {
+    content: " ";
+    pointer-events: none;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+  }
+}
+
+.light-menu-container,
+.light-menu-item {
+  margin: 0;
+  padding: 0;
+}
+
+.light-menu-container {
+  list-style: none;
+
+  .light-menu-container {
+    transition: padding $effect-duration;
+
+    background: fade(#FFF, 5%);
+
+    .light-menu-item > .light-menu-link {
+      height: 0;
+      overflow: hidden;
+    }
+
+    .light-menu-link {
+      padding-left: $second-level-indent;
+    }
+
+    .light-menu-container .light-menu-link {
+      padding-left: $third-level-indent;
+    }
+  }
+
+  &.visible {
+    > .light-menu-item > .light-menu-link {
+      height: $sub-level-item-height;
+    }
+  }
+}
+
+.light-menu-link {
+  color: $fg;
+
+  text-shadow: 0 -1px 0 fade(#000, 50%);
+  transition: height $effect-duration, color $effect-duration, background-color $effect-duration;
+
+  display: block;
+  line-height: $sub-level-item-height;
+  text-decoration: none;
+
+  &:hover {
+    background: fade(#FFF, 5%);
+    color: lighten($fg, 10%);
+  }
+
+  &.active {
+    text-shadow: 0 -1px 0 fade(#000, 25%);
+
+    background: $bg-active;
+    color: #FFF;
+
+    font-weight: bold;
+  }
+
+  &.has-active-child {
+    color: $bg-active;
+    font-weight: bold;
+  }
+}
+
+i.light-menu-icon {
+  text-align: center;
+  width: $icon-width;
+}
+
+i.light-menu-state-icon {
+  transition: transform $effect-duration;
+
+  float: right;
+  line-height: $sub-level-item-height;
+  text-align: center;
+  width: $icon-width;
+
+  &.rotate-minus-90 {
+    transform: rotate(-90deg);
+  }
 }

@@ -1,0 +1,19 @@
+@import "~react-light-menu/src/styles/default.scss";
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+
+  .row {
+    margin-right: 0px !important;
+  }
+}
+
+.content {
+  padding: 75px;
+}
+
+.light-menu {
+  min-height: 100%;
+}
