@@ -15,9 +15,7 @@ const ItemLink = (props) => {
     children
   } = props
 
-  let href = to
-
-  if (hasSubItems) href = null
+  const href = hasSubItems ? null : to
 
   return (
     hasSubItems || external
