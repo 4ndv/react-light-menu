@@ -107,10 +107,10 @@ export default function App (props) {
   return (
     <BrowserRouter>
       <div className='row'>
-        <div className='col-lg-2 col-md-4 col-xs-12'>
+        <div className='col-lg-3 col-md-4 col-xs-12'>
           <LightMenu items={items} debug={true} onSelected={() => console.log('selected!')} />
         </div>
-        <div className='col-lg-10 col-md-8 col-xs-12'>
+        <div className='col-lg-9 col-md-8 col-xs-12'>
           <div className='content'>
             <h1>react-light-menu demo</h1>
             <p>Source for this menu:</p>
