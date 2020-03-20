@@ -20,6 +20,7 @@ const Item = (props) => {
     setActiveItems,
     visibleSubmenus,
     setVisibleSubmenus,
+    classNameStateIcon,
     hideSubmenu,
     showSubmenu
   } = props
@@ -87,11 +88,9 @@ const Item = (props) => {
         {hasSubItems && <i
           className={classnames(
             'light-menu-state-icon',
-            'fa fa-' + (
-              subMenuVisibility
-                ? 'caret-left rotate-minus-90'
-                : 'caret-left'
-            )
+            subMenuVisibility
+              ? [classNameStateIcon, 'rotate-minus-90']
+              : classNameStateIcon
           )}
         />}
       </ItemLink>
@@ -101,6 +100,7 @@ const Item = (props) => {
         activeItems={activeItems}
         setActiveItems={setActiveItems}
         setVisibleSubmenus={setVisibleSubmenus}
+        classNameStateIcon={classNameStateIcon}
         visibleSubmenus={visibleSubmenus}
         hideSubmenu={hideSubmenu}
         showSubmenu={showSubmenu}
@@ -110,6 +110,7 @@ const Item = (props) => {
 }
 
 Item.propTypes = {
+  classNameStateIcon: PropTypes.string,
   hideSubmenu: PropTypes.func,
   showSubmenu: PropTypes.func,
   setVisibleSubmenus: PropTypes.func,

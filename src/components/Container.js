@@ -13,7 +13,8 @@ const Container = (props) => {
     hideSubmenu,
     showSubmenu,
     visibleSubmenus,
-    setVisibleSubmenus
+    setVisibleSubmenus,
+    classNameStateIcon
   } = props
 
   return (
@@ -32,6 +33,7 @@ const Container = (props) => {
           setActiveItems={setActiveItems}
           visibleSubmenus={visibleSubmenus}
           setVisibleSubmenus={setVisibleSubmenus}
+          classNameStateIcon={classNameStateIcon}
           hideSubmenu={hideSubmenu}
           showSubmenu={showSubmenu} />
       ))}
@@ -40,6 +42,7 @@ const Container = (props) => {
 }
 
 Container.propTypes = {
+  classNameStateIcon: PropTypes.string,
   hideSubmenu: PropTypes.func.isRequired,
   showSubmenu: PropTypes.func.isRequired,
   visibleSubmenus: PropTypes.array.isRequired,

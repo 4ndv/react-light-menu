@@ -9,7 +9,7 @@ import Container from './components/Container'
 import './styles/default.scss'
 
 const LightMenu = (props) => {
-  const { items, highlightNested, debug, className } = props
+  const { items, highlightNested, debug, className, classNameStateIcon, onSelected } = props
   const { pathname } = useLocation()
   const [activeItems, setActiveItems] = useState([])
   // Wrapper Set in array because otherwise Set will not be working in the
@@ -31,7 +31,7 @@ const LightMenu = (props) => {
     setActiveItems(foundActiveItems)
 
     if (foundActiveItems.length > 1) {
-      // If last is active and there is more than one - set everything else as an active
+      // If last is active and there is more than one - set everything else as an visible submenus
       setVisibleSubmenus(foundActiveItems.slice(0, -1))
     }
   }, [highlightNested, pathsToHashes, pathname])
@@ -45,6 +45,11 @@ const LightMenu = (props) => {
     console.log(hashedItems)
     console.log(pathsToHashes)
   }, [pathname, activeItems, hashedItems, pathsToHashes, debug])
+
+  // Call onSelected if activeItems changes
+  useEffect(() => {
+    if (onSelected) onSelected()
+  }, [activeItems, onSelected])
 
   const hideSubmenu = (hash) => {
     setVisibleSubmenus(visibleSubmenus.filter(h => h !== hash))
@@ -63,6 +68,7 @@ const LightMenu = (props) => {
         visibleSubmenus={visibleSubmenus}
         setVisibleSubmenus={setVisibleSubmenus}
         hideSubmenu={hideSubmenu}
+        classNameStateIcon={classNameStateIcon}
         showSubmenu={showSubmenu} />
     </div>
   )
@@ -80,13 +86,16 @@ const itemShape = {
 itemShape.items = PropTypes.arrayOf(PropTypes.shape(itemShape))
 
 LightMenu.propTypes = {
+  onSelected: PropTypes.func,
   className: PropTypes.string,
+  classNameStateIcon: PropTypes.string,
   items: PropTypes.arrayOf(PropTypes.shape(itemShape)).isRequired,
   highlightNested: PropTypes.bool,
   debug: PropTypes.bool
 }
 
 LightMenu.defaultProps = {
+  classNameStateIcon: 'fa fa-caret-left',
   className: 'light-menu',
   highlightNested: true,
   debug: false
