@@ -6,7 +6,7 @@ import LightMenu from 'react-light-menu'
 const items = [
   {
     title: 'Home',
-    to: '/',
+    to: '/react-light-menu/',
     icon: 'fa fa-home'
   },
   {
@@ -20,12 +20,12 @@ const items = [
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-book',
-            to: '/menu/1/1'
+            to: '/react-light-menu/menu/1/1'
           },
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-bug',
-            to: '/menu/1/2'
+            to: '/react-light-menu/menu/1/2'
           }
         ]
       },
@@ -36,19 +36,19 @@ const items = [
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-bell',
-            to: '/menu/2/1'
+            to: '/react-light-menu/menu/2/1'
           },
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-check',
-            to: '/menu/2/2'
+            to: '/react-light-menu/menu/2/2'
           }
         ]
       },
       {
         title: 'Submenu Item 3',
         icon: 'fa fa-child',
-        to: '/menu/3'
+        to: '/react-light-menu/menu/3'
       }
     ]
   },
@@ -63,12 +63,12 @@ const items = [
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-plane',
-            to: '/menu_2/1/1'
+            to: '/react-light-menu/menu_2/1/1'
           },
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-plug',
-            to: '/menu_2/1/2'
+            to: '/react-light-menu/menu_2/1/2'
           }
         ]
       },
@@ -79,19 +79,19 @@ const items = [
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-user',
-            to: '/menu_2/2/1'
+            to: '/react-light-menu/menu_2/2/1'
           },
           {
             title: 'Submenu SubItem 1',
             icon: 'fa fa-tag',
-            to: '/menu_2/2/2'
+            to: '/react-light-menu/menu_2/2/2'
           }
         ]
       },
       {
         title: 'Submenu Item 3',
         icon: 'fa fa-square',
-        to: '/menu_2/3'
+        to: '/react-light-menu/menu_2/3'
       }
     ]
   },
