@@ -48,7 +48,7 @@ const LightMenu = (props) => {
 
   // Call onSelected if activeItems changes
   useEffect(() => {
-    if (onSelected) onSelected()
+    if (onSelected && activeItems.length > 0) onSelected()
   }, [activeItems, onSelected])
 
   const hideSubmenu = (hash) => {
