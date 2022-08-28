@@ -4,7 +4,7 @@ Modern and easy to use menu component for react-router. Heavily inspired by [rea
 
 [![NPM](https://img.shields.io/npm/v/react-light-menu.svg)](https://www.npmjs.com/package/react-light-menu) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
-**[Demo](https://lynx.pink/react-light-menu)**
+**[Demo](https://madeby.lynx.pink/react-light-menu)**
 
 ## Install
 
